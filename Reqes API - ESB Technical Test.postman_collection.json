@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "b7ea1117-cd20-45ce-bf4b-414affffcac2",
+		"name": "Reqes API - ESB Technical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23367023"
+	},
+	"item": [
+		{
+			"name": "LIST USERS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data[0].first_name).to.eql('Michael');\r",
+							"});\r",
+							"\r",
+							"pm.test('Your test name dynamic', function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.name).to.eql(pm.globals.get('name'));\r",
+							"})\r",
+							"\r",
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'page': { 'type': 'integer' },\r",
+							"        'per_page': { 'type': 'integer' },\r",
+							"        'total': { 'type': 'integer' },\r",
+							"        'total_pages': { 'type': 'integer' },\r",
+							"        'data': {\r",
+							"            'type': 'array',\r",
+							"            'items': [\r",
+							"                {\r",
+							"                    'type': 'object',\r",
+							"                    'properties': {\r",
+							"                        'id': { 'type': 'integer' },\r",
+							"                        'email': { 'type': 'string' },\r",
+							"                        'first_name': { 'type': 'string' },\r",
+							"                        'last_name': { 'type': 'string' },\r",
+							"                        'avatar': { 'type': 'string' }\r",
+							"                    },\r",
+							"                    'required': [\r",
+							"                        'id',\r",
+							"                        'email',\r",
+							"                        'first_name',\r",
+							"                        'last_name',\r",
+							"                        'avatar'\r",
+							"                    ]\r",
+							"                },\r",
+							"                {\r",
+							"                    'type': 'object',\r",
+							"                    'properties': {\r",
+							"                        'id': { 'type': 'integer' },\r",
+							"                        'email': { 'type': 'string' },\r",
+							"                        'first_name': { 'type': 'string' },\r",
+							"                        'last_name': { 'type': 'string' },\r",
+							"                        'avatar': { 'type': 'string' }\r",
+							"                    },\r",
+							"                    'required': [\r",
+							"                        'id',\r",
+							"                        'email',\r",
+							"                        'first_name',\r",
+							"                        'last_name',\r",
+							"                        'avatar'\r",
+							"                    ]\r",
+							"                },\r",
+							"                {\r",
+							"                    'type': 'object',\r",
+							"                    'properties': {\r",
+							"                        'id': { 'type': 'integer' },\r",
+							"                        'email': { 'type': 'string' },\r",
+							"                        'first_name': { 'type': 'string' },\r",
+							"                        'last_name': { 'type': 'string' },\r",
+							"                        'avatar': { 'type': 'string' }\r",
+							"                    },\r",
+							"                    'required': [\r",
+							"                        'id',\r",
+							"                        'email',\r",
+							"                        'first_name',\r",
+							"                        'last_name',\r",
+							"                        'avatar'\r",
+							"                    ]\r",
+							"                },\r",
+							"                {\r",
+							"                    'type': 'object',\r",
+							"                    'properties': {\r",
+							"                        'id': { 'type': 'integer' },\r",
+							"                        'email': { 'type': 'string' },\r",
+							"                        'first_name': { 'type': 'string' },\r",
+							"                        'last_name': { 'type': 'string' },\r",
+							"                        'avatar': { 'type': 'string' }\r",
+							"                    },\r",
+							"                    'required': [\r",
+							"                        'id',\r",
+							"                        'email',\r",
+							"                        'first_name',\r",
+							"                        'last_name',\r",
+							"                        'avatar'\r",
+							"                    ]\r",
+							"                },\r",
+							"                {\r",
+							"                    'type': 'object',\r",
+							"                    'properties': {\r",
+							"                        'id': { 'type': 'integer' },\r",
+							"                        'email': { 'type': 'string' },\r",
+							"                        'first_name': { 'type': 'string' },\r",
+							"                        'last_name': { 'type': 'string' },\r",
+							"                        'avatar': { 'type': 'string' }\r",
+							"                    },\r",
+							"                    'required': [\r",
+							"                        'id',\r",
+							"                        'email',\r",
+							"                        'first_name',\r",
+							"                        'last_name',\r",
+							"                        'avatar'\r",
+							"                    ]\r",
+							"                },\r",
+							"                {\r",
+							"                    'type': 'object',\r",
+							"                    'properties': {\r",
+							"                        'id': { 'type': 'integer' },\r",
+							"                        'email': { 'type': 'string' },\r",
+							"                        'first_name': { 'type': 'string' },\r",
+							"                        'last_name': { 'type': 'string' },\r",
+							"                        'avatar': { 'type': 'string' }\r",
+							"                    },\r",
+							"                    'required': [\r",
+							"                        'id',\r",
+							"                        'email',\r",
+							"                        'first_name',\r",
+							"                        'last_name',\r",
+							"                        'avatar'\r",
+							"                    ]\r",
+							"                }\r",
+							"            ]\r",
+							"        },\r",
+							"        'support': {\r",
+							"            'type': 'object',\r",
+							"            'properties': {\r",
+							"                'url': { 'type': 'string' },\r",
+							"                'text': { 'type': 'string' }\r",
+							"            },\r",
+							"            'required': [\r",
+							"                'url',\r",
+							"                'text'\r",
+							"            ]\r",
+							"        }\r",
+							"    },\r",
+							"    'required': [\r",
+							"        'page',\r",
+							"        'per_page',\r",
+							"        'total',\r",
+							"        'total_pages',\r",
+							"        'data',\r",
+							"        'support'\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.test('Validate JSON schema', function () {\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users?page=3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.first_name).to.eql('Byron');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name dynamic\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.name).to.eql(pm.globals.get('name'));\r",
+							"});\r",
+							"\r",
+							"const schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"data\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"first_name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"last_name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"avatar\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"email\",\r",
+							"        \"first_name\",\r",
+							"        \"last_name\",\r",
+							"        \"avatar\"\r",
+							"      ]\r",
+							"    },\r",
+							"    \"support\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"url\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"text\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"url\",\r",
+							"        \"text\"\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"data\",\r",
+							"    \"support\"\r",
+							"  ]\r",
+							"}\r",
+							"\r",
+							"pm.test('Validate JSON schema', function(){\r",
+							"    pm.response.to.have.jsonSchema(schema)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users/{{userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{userID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER-SUCCESFUL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{pass}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/register",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER-UNSUCCESFUL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/register",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
